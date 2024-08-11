@@ -34,23 +34,25 @@ const HomePage = () => {
   if (loading) return <p>Loading...</p>;
 
   return (
-    <div className="ml-20 mr-20 mt-10">
-      <Carousel
-        responsive={responsive}
-        itemClass="carousel-item"
-        containerClass="carousel-container"
-      >
-        {products.map((product) => (
-          <Card
-            key={product.product_id}
-            productname={product.name}
-            description={product.description}
-            discount={product.discount}
-            price={product.price}
-          />
-        ))}
-      </Carousel>
-    </div>
+    <>
+      <div className="ml-20 mr-20 mt-10">
+        <Carousel
+          responsive={responsive}
+          itemClass="carousel-item"
+          containerClass="carousel-container"
+        >
+          {products.map((product) => (
+            <Card
+              key={product.product_id}
+              productname={product.name}
+              description={product.description}
+              discount={product.discount}
+              price={product.price}
+            />
+          ))}
+        </Carousel>
+      </div>
+    </>
   );
 };
 

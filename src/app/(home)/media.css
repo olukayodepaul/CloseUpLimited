@@ -1,0 +1,7 @@
+/* About to add the media query to adjust all the element for each device */
+/* The media query is working perfectly*/
+@media (max-width: 1000px) {
+  .card-bg-color {
+    background-color: aquamarine;
+  }
+}

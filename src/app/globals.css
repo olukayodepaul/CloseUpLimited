@@ -50,7 +50,7 @@ body {
   font-size: 16px;
 }
 
-@media (max-width: 520px) {
+@media (max-width: 600px) {
   .custom-layout {
     font-size: 10px;
   }
@@ -60,7 +60,7 @@ body {
   }
 }
 
-@media (min-width: 500px) {
+@media (min-width: 1200px) {
   .custom-layout {
     font-size: 14px;
   }
