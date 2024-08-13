@@ -22,50 +22,26 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-  #color {
-    color: white;
-  }
+.embla {
+  overflow: hidden;
+  width: 950px;
+  position: relative;
 }
-.roboto {
-  font-family: var(--font--roboto);
+.embla__viewport {
+  overflow: hidden;
 }
-
-.react-multi-carousel-item {
-  padding: 0 10px;
+.embla__container {
+  display: flex;
+  height: 315px;
+  gap: 10px;
 }
-
-.react-multi-carousel-item > div {
-  margin: 0 auto;
+.embla__slide {
+  flex: 0 0 20%;
 }
 
-.custom-layout {
-  font-size: 16px;
+.embla__slide:last-child {
+  margin-right: 0;
 }
-
-.custom-button {
-  font-size: 16px;
-}
-
-@media (max-width: 600px) {
-  .custom-layout {
-    font-size: 10px;
-  }
-
-  .custom-button {
-    font-size: 10px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .custom-layout {
-    font-size: 14px;
-  }
-
-  .custom-button {
-    font-size: 14px;
-  }
+.embla__tn_position {
+  margin-top: 20px;
 }

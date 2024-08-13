@@ -9,7 +9,9 @@ const LoveIcon = ({
   color?: string;
 }) => {
   return (
-    <HeartIcon className={`h-6 w-6 ${className} `} style={{ fill: color }} />
+    <button className="px-2 py-1 rounded-lg bg-blue-300 hover:bg-blue-200">
+      <HeartIcon className={`h-6 w-6 ${className} `} style={{ fill: color }} />
+    </button>
   );
 };
 

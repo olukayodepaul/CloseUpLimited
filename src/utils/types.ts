@@ -5,6 +5,7 @@ export interface CardProps {
   description: string;
   discount: string;
   price: string;
+  embla__slide: string;
 }
 
 export interface Product {
