@@ -6,7 +6,6 @@ import Cards from "./component/Cards";
 import "react-multi-carousel/lib/styles.css";
 import useEmblaCarousel from "embla-carousel-react";
 
-//this can be re-use
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
 
 const HomePage = () => {
@@ -34,7 +33,7 @@ const HomePage = () => {
       updateNavigation();
       emblaApi.on("scroll", updateNavigation);
     }
-    // Cleanup listener on component unmount
+
     return () => {
       if (emblaApi) emblaApi.off("scroll", updateNavigation);
     };

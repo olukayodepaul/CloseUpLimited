@@ -45,22 +45,21 @@ body {
 .embla__tn_position {
 }
 
-.embla__button {
-  background-color: rgba(128, 128, 128, 0.5);
-  border: none;
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-}
-
 .btn-bound {
   margin: 30px;
   width: 950px;
   position: relative;
 }
 
+.embla__button {
+  background-color: hsla(0, 0%, 20%, 0.7);
+  border: none;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
 .embla__button--prev {
-  left: -10px;
   top: 50%;
   position: absolute;
   display: flex;
@@ -70,11 +69,16 @@ body {
 }
 
 .embla__button--next {
-  right: 0;
+  right: 5px;
   top: 50%;
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
   transform: translate(50%, -50%);
+}
+
+/* Hide buttons when they should be hidden */
+.embla__button.hidden {
+  display: none;
 }
