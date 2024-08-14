@@ -46,7 +46,7 @@ body {
 }
 
 .embla__button {
-  background-color: goldenrod;
+  background-color: rgba(128, 128, 128, 0.5);
   border: none;
   height: 40px;
   width: 40px;
