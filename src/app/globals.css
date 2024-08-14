@@ -24,7 +24,6 @@ body {
 
 .embla {
   overflow: hidden;
-  width: 950px;
   position: relative;
 }
 .embla__viewport {
@@ -32,9 +31,9 @@ body {
 }
 .embla__container {
   display: flex;
-  height: 315px;
   gap: 10px;
 }
+
 .embla__slide {
   flex: 0 0 20%;
 }
@@ -42,6 +41,40 @@ body {
 .embla__slide:last-child {
   margin-right: 0;
 }
+
 .embla__tn_position {
-  margin-top: 20px;
+}
+
+.embla__button {
+  background-color: goldenrod;
+  border: none;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.btn-bound {
+  margin: 30px;
+  width: 950px;
+  position: relative;
+}
+
+.embla__button--prev {
+  left: -10px;
+  top: 50%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(0, -50%);
+}
+
+.embla__button--next {
+  right: 0;
+  top: 50%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(50%, -50%);
 }

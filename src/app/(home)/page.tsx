@@ -6,7 +6,8 @@ import Cards from "./component/Cards";
 import "react-multi-carousel/lib/styles.css";
 import useEmblaCarousel from "embla-carousel-react";
 
-//code can be reduce and design as a function
+//this can be re-use
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
 
 const HomePage = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -60,7 +61,7 @@ const HomePage = () => {
   if (loading) return <p>Loading...</p>;
 
   return (
-    <div className="p-40">
+    <div className="btn-bound">
       <div className="embla">
         <div className="embla__viewport" ref={emblaRef}>
           <div className="embla__container">
@@ -77,25 +78,22 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-
-      <div className="flex justify-between mt-4">
-        <button
-          className={`embla__button embla__button--prev ${
-            !canScrollPrev ? "hidden" : ""
-          }`}
-          onClick={scrollPrev}
-        >
-          Prev
-        </button>
-        <button
-          className={`embla__button embla__button--next ${
-            !canScrollNext ? "hidden" : ""
-          }`}
-          onClick={scrollNext}
-        >
-          Next
-        </button>
-      </div>
+      <button
+        className={`embla__button embla__button--prev ${
+          !canScrollPrev ? "hidden" : ""
+        }`}
+        onClick={scrollPrev}
+      >
+        <ChevronLeftIcon className="h-9 w-9 text-white" />
+      </button>
+      <button
+        className={`embla__button embla__button--next  ${
+          !canScrollNext ? "hidden" : ""
+        }`}
+        onClick={scrollNext}
+      >
+        <ChevronRightIcon className="h-9 w-9 text-white" />
+      </button>
     </div>
   );
 };

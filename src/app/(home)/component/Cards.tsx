@@ -23,27 +23,25 @@ const Cards = ({
   return (
     <>
       <div className={`${embla__slide}`}>
-        <div>
-          <div className="w-[200px] h-[315px]">
-            <div className="shadow-lg bg-white rounded-lg">
-              <img
-                src="http://localhost:3000/images/imges.png"
-                alt=""
-                className="w-full"
-              />
-              <div className="p-2">
-                <div className="text-xs">{productname}</div>
-                <div className="text-xl roboto font-bold">{price}</div>
-                <div className=" line-through opacity-75 custom-layout">
-                  {discount}
-                </div>
-                <StarRating rating={4} />
-                <div className="flex gap-2 mt-4">
-                  <CartIcon gbColor="text-gray-700" />
-                  <HeartIcon className="" color="red" />
-                </div>
+        <div className="w-[180px] h-[315px]">
+          <div className=" bg-white rounded-lg">
+            <img
+              src="http://localhost:3000/images/imges.png"
+              alt=""
+              className="w-full"
+            />
+            <blockquote className="p-2">
+              <p className="text-xs">{productname}</p>
+              <p className="text-xl roboto font-bold">{price}</p>
+              <p className=" line-through opacity-75 custom-layout">
+                {discount}
+              </p>
+              <StarRating rating={4} />
+              <div className="flex gap-2 mt-4">
+                <CartIcon gbColor="text-gray-700" />
+                <HeartIcon className="" color="red" />
               </div>
-            </div>
+            </blockquote>
           </div>
         </div>
       </div>
