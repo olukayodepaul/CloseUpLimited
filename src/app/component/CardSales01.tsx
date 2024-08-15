@@ -24,15 +24,15 @@ function CardSales01() {
           <InformationCircleIcon className="h-4 w-4 text-zinc-700 ml-1 hover:text-amber-600 transition-colors duration-300 cursor-pointer" />
         </div>
 
-        <p className="mb-2 hover:text-amber-600 transition-colors duration-300 cursor-pointer">
+        <p className="mb-1 hover:text-amber-600 transition-colors duration-300 cursor-pointer">
           Digital Camera 4K, Ultra HD 48MP Photo 4K Video, Dual Lens Camera, 18x
           Digital Zoom, Autofocus Camera for Photography, with Wi...
         </p>
         <div className="mb-1">
           <StarRating rating={4} />
         </div>
-        <p className="text-xs mb-3">500+ bought in past month</p>
-        <div className="text-2xl flex align-middle">
+        <p className="text-xs mb-1">500+ bought in past month</p>
+        <div className="text-2xl flex align-middle mb-2">
           <p className="text-sm align-middle mt-1">$</p>
           <p className="text-4xl tracking-[-2px] font-medium">59</p>
           <p className="text-sm mt-1 mr-2 pl-1">99</p>
