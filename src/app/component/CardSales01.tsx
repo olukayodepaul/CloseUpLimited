@@ -5,7 +5,7 @@ import StarRating from "../(home)/component/StarRating";
 
 function CardSales01() {
   return (
-    <div className="w-[280px] h-[600px] rounded-lg overflow-hidden border border-gray-100 m-4">
+    <div className="w-[280px] h-[620px] rounded-lg overflow-hidden border border-gray-100 m-4">
       <div className="w-[280px] h-[260px]">
         <Image
           src="/images/imges.png"
@@ -42,7 +42,7 @@ function CardSales01() {
           </p>
         </div>
 
-        <div className="flex items-center text-xs">
+        <div className="flex items-center text-xs mb-1">
           <p className="bg-lime-600 py-1 px-2 text-white hover:bg-lime-700 transition-colors duration-300 cursor-pointer">
             Save 25%
           </p>
@@ -55,10 +55,10 @@ function CardSales01() {
         </div>
 
         <div>
-          <span className="mr-1 text-sm">Delivery</span>
-          <span className="font-bold">Wed, Sep 4</span>
+          <span className="mr-2 text-sm">Delivery</span>
+          <span className="font-bold text-sm">Wed, Sep 4</span>
         </div>
-        <div className="text-xs">Ships to Lagos</div>
+        <div className="text-xs mt-1">Ships to Lagos</div>
         <p className="mb-3"></p>
         <button className="bg-yellow-400 p-2 pr-5 pl-5 text-xs rounded-2xl border border-gray-100 hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-300 transition-colors duration-300">
           Add to Cart
