@@ -1,13 +1,21 @@
 import "./globals.css";
-import { Roboto } from "next/font/google";
+import localFont from "next/font/local";
 import { Metadata } from "next";
 
-const roboto_init = Roboto({
-  subsets: ["latin"],
-  weight: ["100", "300", "700"],
-  variable: "--font--roboto",
+const ubuntu = localFont({
+  src: [
+    {
+      path: "../font/Ubuntu-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../font/Ubuntu-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
 });
-
 export const metadata: Metadata = {
   title: {
     absolute: "",
@@ -24,7 +32,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${roboto_init.variable}`}>{children}</body>
+      <body className={`${ubuntu.className}`}>{children}</body>
     </html>
   );
 }

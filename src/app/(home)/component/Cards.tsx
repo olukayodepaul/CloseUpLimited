@@ -10,7 +10,7 @@ import { CardProps } from "../../../utils/types";
 // The code base can be improve on at production level.
 // the next and prevous button is hidden at a point where no more item is in the slide buffer
 // Component can also be drill down as re-usable....
-//Thanks.
+// Thanks.
 //Paul Olukayode
 
 const Cards = ({

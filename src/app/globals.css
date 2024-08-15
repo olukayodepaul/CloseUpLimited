@@ -9,6 +9,8 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-color: #fff;
+    --font--roboto: "Roboto", sans-serif;
+    --font-open-sans: "Open_Sans", sans-serif;
   }
 }
 
