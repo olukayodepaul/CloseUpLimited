@@ -12,17 +12,6 @@ export default function showCard() {
       <div className="flex items-center justify-center mx-auto adjust_screen">
         <div className="resizes__containers">
           <CardSales01 />
-          <CardSales01 />
-          <CardSales01 />
-          <CardSales01 />
-          <CardSales01 />
-          <CardSales01 />
-          <CardSales01 />
-          <CardSales01 />
-          <CardSales01 />
-          <CardSales01 />
-          <CardSales01 />
-          <CardSales01 />
         </div>
       </div>
     </div>
