@@ -84,3 +84,90 @@ body {
 .embla__button.hidden {
   display: none;
 }
+
+.grid-2-cols {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 5rem;
+  width: 900px;
+}
+
+@media (min-width: 0px) {
+  .resizes__containers {
+    @apply grid  grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-2 mr-3 ml-3;
+  }
+  .adjust_screen {
+    width: 1000px;
+    float: left;
+  }
+}
+
+@media (min-width: 1001px) {
+  .resizes__containers {
+    @apply grid  grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-2 mr-3 ml-3;
+  }
+  .adjust_screen {
+    width: auto;
+    float: left;
+  }
+}
+
+@media (min-width: 1000px) {
+  .resizes__containers {
+    @apply grid  grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 mr-3 ml-3;
+  }
+  .adjust_screen {
+    width: auto;
+    float: none;
+  }
+}
+
+@media (min-width: 999px) {
+  .resizes__containers {
+    @apply grid  grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-2 mr-3 ml-3;
+  }
+  .adjust_screen {
+    width: auto;
+    float: none;
+  }
+}
+
+@media (min-width: 1240px) {
+  .resizes__containers {
+    @apply grid  grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-2 mr-3 ml-3;
+  }
+  .adjust_screen {
+    width: auto;
+    float: none;
+  }
+}
+
+@media (min-width: 1260px) {
+  .resizes__containers {
+    @apply grid  grid-cols-5 md:grid-cols-5 lg:grid-cols-5 gap-2 mr-3 ml-3;
+  }
+  .adjust_screen {
+    width: auto;
+    float: none;
+  }
+}
+
+@media (min-width: 1440px) {
+  .resizes__containers {
+    @apply grid  grid-cols-5 md:grid-cols-5 lg:grid-cols-5 gap-2 mr-3 ml-3;
+  }
+  .adjust_screen {
+    width: auto;
+    float: none;
+  }
+}
+
+@media (min-width: 2000px) {
+  .resizes__containers {
+    @apply grid  grid-cols-5 md:grid-cols-5 lg:grid-cols-5 gap-2 mr-3 ml-3;
+  }
+  .adjust_screen {
+    width: auto;
+    float: none;
+  }
+}
