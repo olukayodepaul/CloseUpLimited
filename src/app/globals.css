@@ -24,74 +24,6 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-.embla {
-  overflow: hidden;
-  position: relative;
-}
-.embla__viewport {
-  overflow: hidden;
-}
-.embla__container {
-  display: flex;
-  gap: 10px;
-}
-
-.embla__slide {
-  flex: 0 0 20%;
-}
-
-.embla__slide:last-child {
-  margin-right: 0;
-}
-
-.embla__tn_position {
-}
-
-.btn-bound {
-  margin: 30px;
-  width: 950px;
-  position: relative;
-}
-
-.embla__button {
-  background-color: hsla(0, 0%, 20%, 0.7);
-  border: none;
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-}
-
-.embla__button--prev {
-  top: 50%;
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: translate(0, -50%);
-}
-
-.embla__button--next {
-  right: 5px;
-  top: 50%;
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: translate(50%, -50%);
-}
-
-/* Hide buttons when they should be hidden */
-.embla__button.hidden {
-  display: none;
-}
-
-.grid-2-cols {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  column-gap: 5rem;
-  width: 900px;
-}
-
 @media (min-width: 0px) {
   .resizes__containers {
     @apply grid  grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-2 mr-3 ml-3;
@@ -164,10 +96,72 @@ body {
 
 @media (min-width: 2000px) {
   .resizes__containers {
-    @apply grid  grid-cols-5 md:grid-cols-5 lg:grid-cols-5 gap-2 mr-3 ml-3;
+    @apply grid grid-cols-5 md:grid-cols-5 lg:grid-cols-5 gap-2 mr-3 ml-3;
   }
   .adjust_screen {
     width: auto;
     float: none;
   }
+}
+
+.carousel__container {
+  margin: auto;
+  @apply overflow-hidden mr-5 ml-5;
+  position: relative;
+  margin-top: 40px;
+}
+/* save this bacground for future use */
+/* bg-slate-200 */
+
+/*Corausel css*/
+.carousel__content {
+  margin: auto;
+  margin-left: 20px;
+  margin-right: 20px;
+  @apply flex;
+}
+
+.carousel__button {
+  position: absolute;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @apply h-[40px] w-[40px] rounded shadow-md border border-neutral-300;
+  top: 50%;
+}
+
+.carousel__button--prev {
+  right: 0;
+  transform: translate(0, -50%);
+}
+
+.carousel__button--next {
+  left: 0;
+  transform: translate(0, -50%);
+}
+
+.card3_main_container {
+  width: 185px;
+  float: none;
+  @apply ml-2 mr-2;
+}
+
+.embla {
+  overflow: hidden;
+  margin: auto;
+  @apply overflow-hidden mr-5 ml-5;
+  position: relative;
+  margin-top: 40px;
+}
+
+.embla__container {
+  display: flex;
+  margin: auto;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.embla__slide {
+  flex: 0 0 auto;
 }
