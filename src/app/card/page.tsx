@@ -61,7 +61,7 @@ export default function showCard() {
             <div className="flex items-center mr-36">
               <FontAwesomeIcon
                 icon={faBars}
-                className="w-7 h-7 text-amber-600 active:bg-slate-300focus:outline-none hover:text-amber-500  cursor-pointer"
+                className="w-5 h-5 text-white  hover:text-amber-100  transition-colors duration-300 cursor-pointer"
               />
             </div>
 
@@ -124,7 +124,7 @@ export default function showCard() {
           {/* ----end header ---- */}
         </div>
       </header>
-      {/* <div className="mt-5">
+      <div className="mt-5">
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0"
@@ -138,9 +138,9 @@ export default function showCard() {
             ))}
           </div>
         </div>
-      </div> */}
+      </div>
 
-      {/* <div className="carousel_wrapers">
+      <div className="carousel_wrapers">
         <div className="embla">
           <div className="embla__viewport" ref={emblaRef}>
             <div className="embla__container">
@@ -164,7 +164,7 @@ export default function showCard() {
         >
           <ChevronLeftIcon className="h-8 w-8" />
         </button>
-      </div> */}
+      </div>
     </>
   );
 }
