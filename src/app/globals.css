@@ -122,7 +122,6 @@ body {
 }
 
 .carousel__button {
-  position: absolute;
   background-color: #fff;
   display: flex;
   align-items: center;
@@ -132,36 +131,52 @@ body {
 }
 
 .carousel__button--prev {
-  right: 0;
+  position: absolute;
+  z-index: 1;
+  right: 24px;
   transform: translate(0, -50%);
 }
 
 .carousel__button--next {
-  left: 0;
+  position: absolute;
+  left: 24px;
   transform: translate(0, -50%);
 }
 
 .card3_main_container {
-  width: 185px;
+  width: 170px;
   float: none;
   @apply ml-2 mr-2;
 }
 
 .embla {
   overflow: hidden;
-  margin: auto;
   @apply overflow-hidden mr-5 ml-5;
-  position: relative;
   margin-top: 40px;
+  margin-left: 65px;
+  margin-right: 65px;
 }
 
 .embla__container {
   display: flex;
   margin: auto;
-  margin-left: 20px;
-  margin-right: 20px;
 }
 
 .embla__slide {
   flex: 0 0 auto;
+}
+
+.carousel_wrapers {
+  margin: auto;
+  position: relative;
+}
+
+.payment__header {
+  background-color: #fff;
+  padding: 20px;
+}
+
+.main__header {
+  background-color: #263238;
+  /* @apply shadow-lg pt-1 pl-2 pr-2 pb-1 flex items-center gap-32; */
 }

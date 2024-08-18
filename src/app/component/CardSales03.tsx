@@ -4,7 +4,7 @@ import StarRating from "../(home)/component/StarRating";
 
 export default function CardSales03() {
   return (
-    <div className="card3_main_container h-[400px]">
+    <div className="card3_main_container mb-10">
       <div className="resizes__card03">
         <Image
           src="/images/imges.png"
@@ -14,7 +14,7 @@ export default function CardSales03() {
           className="object-cover inset-0 mb-1"
         />
         <div className="ml-0 text-stone-950">
-          <p className="w-[180px] text-sky-800 mb-1 hover:text-amber-600 transition-colors duration-300 cursor-pointer text-sm">
+          <p className="w-[170px] text-sky-800 mb-1 hover:text-amber-600 transition-colors duration-300 cursor-pointer text-sm">
             Digital Camera 4K, Ultra HD 48MP Photo 4K Video, Dual Lens Camera,
             18x Digital Zoom, Autofocus Camera for Photography, with Wi...
           </p>
