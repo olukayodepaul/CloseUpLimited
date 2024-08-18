@@ -4,20 +4,18 @@ import React, { useEffect, useCallback } from "react";
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
-  ChevronDownIcon,
   MagnifyingGlassIcon,
 } from "@heroicons/react/20/solid";
 import CardSales03 from "../component/CardSales03";
 import CardSales01 from "../component/CardSales01";
 import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from "embla-carousel-autoplay";
-import EmblaCarouselFade from "embla-carousel-fade";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faTruckFast } from "@fortawesome/free-solid-svg-icons";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 export default function showCard() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -49,10 +47,39 @@ export default function showCard() {
       scrollToIndex(newIndex);
     }
   }, [emblaApi, scrollToIndex]);
+
+  const openNavBar = (event: any) => {
+    event.preventDefault();
+    const nav = document.getElementById("Navname");
+    const overlay = document.getElementById("overlay");
+    const scrollDisable = document.getElementById("overlay");
+
+    if (overlay && nav) {
+      nav.style.animation = "expand 0.2s forwards";
+      overlay.style.display = "block";
+      document.body.classList.add("overlay-active");
+      overlay.style.animation = "expand 0.2s forwards";
+    }
+  };
+
+  const closeNavBar = (event: any) => {
+    event.preventDefault();
+    const nav = document.getElementById("Navname");
+    const overlay = document.getElementById("overlay");
+
+    if (overlay && nav) {
+      nav.style.animation = "collaps 0.2s forwards";
+      overlay.style.animation = "hide 0.2s forwards";
+      document.body.classList.remove("overlay-active");
+      overlay.style.display = "none";
+    }
+  };
+
   return (
     <>
       {/* text-amber-900 */}
-      <header className="top-0 left-0 w-full  shadow-sm">
+      <div id="overlay"></div>
+      <header className="top-0 left-0 w-full  shadow-sm relative">
         <div className="header__container pt-2 pb-2 pl-5 pr-5 bg-slate-800">
           <div className="adver___header"></div>
 
@@ -62,6 +89,7 @@ export default function showCard() {
               <FontAwesomeIcon
                 icon={faBars}
                 className="w-5 h-5 text-white  hover:text-amber-100  transition-colors duration-300 cursor-pointer"
+                onClick={openNavBar}
               />
             </div>
 
@@ -121,50 +149,64 @@ export default function showCard() {
               </div>
             </div>
           </div>
+
           {/* ----end header ---- */}
         </div>
+        <div className="border-gray-200 shadow-sm h-12 "></div>
       </header>
-      <div className="mt-5">
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0"
-        ></meta>
-        <div className="flex items-center justify-center mx-auto adjust_screen">
-          <div className="resizes__containers">
-            {[...Array(10)].map((_, index) => (
-              <div className="embla__slide" key={index}>
-                <CardSales01 />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
 
-      <div className="carousel_wrapers">
-        <div className="embla">
-          <div className="embla__viewport" ref={emblaRef}>
-            <div className="embla__container">
-              {[...Array(18)].map((_, index) => (
+      <main>
+        <aside className="navBar" id="Navname">
+          <FontAwesomeIcon
+            icon={faXmark}
+            className="w-6 h-6 text-gray-700 hover:text-gray-900 transition-colors duration-300 cursor-pointer"
+            onClick={closeNavBar}
+          />
+          <p>Navigation content hare</p>
+        </aside>
+
+        <div className="mt-5">
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          ></meta>
+          <div className="flex items-center justify-center mx-auto adjust_screen">
+            <div className="resizes__containers">
+              {[...Array(10)].map((_, index) => (
                 <div className="embla__slide" key={index}>
-                  <CardSales03 />
+                  <CardSales01 />
                 </div>
               ))}
             </div>
           </div>
         </div>
-        <button
-          onClick={scrollPrev}
-          className="embla__prev carousel__button carousel__button--prev bg-white text-gray-500 active:bg-slate-300 active:text-white focus:outline-none hover:text-amber-600"
-        >
-          <ChevronRightIcon className="h-8 w-8" />
-        </button>
-        <button
-          onClick={scrollNext}
-          className="embla__next carousel__button carousel__button--next bg-white text-gray-500 active:bg-slate-300 active:text-white focus:outline-none hover:text-amber-600"
-        >
-          <ChevronLeftIcon className="h-8 w-8" />
-        </button>
-      </div>
+
+        {/* <div className="carousel_wrapers">
+          <div className="embla">
+            <div className="embla__viewport" ref={emblaRef}>
+              <div className="embla__container">
+                {[...Array(18)].map((_, index) => (
+                  <div className="embla__slide" key={index}>
+                    <CardSales03 />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          <button
+            onClick={scrollPrev}
+            className="embla__prev carousel__button carousel__button--prev bg-white text-gray-500 active:bg-slate-300 active:text-white focus:outline-none hover:text-amber-600"
+          >
+            <ChevronRightIcon className="h-8 w-8" />
+          </button>
+          <button
+            onClick={scrollNext}
+            className="embla__next carousel__button carousel__button--next bg-white text-gray-500 active:bg-slate-300 active:text-white focus:outline-none hover:text-amber-600"
+          >
+            <ChevronLeftIcon className="h-8 w-8" />
+          </button>
+        </div> */}
+      </main>
     </>
   );
 }
