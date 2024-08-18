@@ -16,6 +16,8 @@ import EmblaCarouselFade from "embla-carousel-fade";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faTruckFast } from "@fortawesome/free-solid-svg-icons";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 export default function showCard() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -49,49 +51,80 @@ export default function showCard() {
   }, [emblaApi, scrollToIndex]);
   return (
     <>
+      {/* text-amber-900 */}
       <header className="top-0 left-0 w-full  shadow-sm">
-        <div className="adver___header"></div>
-        <div className="p-5 bg-slate-300"></div>
+        <div className="header__container pt-2 pb-2 pl-5 pr-5 bg-slate-800">
+          <div className="adver___header"></div>
 
-        <div className="flex items-center main__header pt-3 pl-5 pr-5 pb-3 gap-28">
-          <p className="text-slate-300 flex-shrink-0">
-            <FontAwesomeIcon icon={faBars} className="w-6 h-6" />
-          </p>
+          {/* ----start header ---- */}
+          <div className="flex items-center justify-between">
+            <div className="flex items-center mr-36">
+              <FontAwesomeIcon
+                icon={faBars}
+                className="w-7 h-7 text-amber-600 active:bg-slate-300focus:outline-none hover:text-amber-500  cursor-pointer"
+              />
+            </div>
 
-          <div className="flex-1 flex items-center justify-between ml-4">
-            <div className="flex w-[800px] ">
-              <div className="flex flex-none  items-center border border-gray-200 rounded-l-md p-2 pr-3 bg-gray-300 text-sm text-gray-500 hover:text-gray-700 transition-colors duration-300 cursor-pointer">
-                <p className="mr-5"> Computer Engineering Development</p>
+            {/* ----Search Box header ---- */}
+            <div className="flex flex-1 mr-10">
+              <div className="flex flex-none items-center border-l border-b border-t border-gray-200 bg-gray-200 text-gray-600 text-xs  rounded-l-md p-2 pr-3   hover:bg-gray-300 hover:border-gray-300 transition-colors duration-300 cursor-pointer ">
+                <p className="mr-1">Camera & Photo</p>
                 <FontAwesomeIcon
                   icon={faCaretDown}
-                  className="w-3 h-3 text-slate-500 stroke-gray-900 "
+                  className="w-3 h-3 text-amber-700 stroke-amber-700 "
                 />
               </div>
               <input
-                className="bg-white text-white px-4 py-2 focus:outline-none  focus:ring-0 grow "
-                placeholder="Search DartSpatial"
+                className="text-sm bg-white text-white px-4 py-2 focus:outline-none  focus:ring-0 grow border-b border-t border-l border-white"
+                placeholder="Search on DartSpatial Engine"
               />
-
-              <button className=" text-white rounded-r-lg bg-amber-700 border border-amber-700  pl-3 pr-3 flex-none">
+              <button className=" text-white rounded-r-lg bg-amber-700 border-b-2 border-t border-r border-amber-700 pl-3 pr-3 flex-none hover:bg-amber-800 hover:border-amber-800 transition-colors duration-300 cursor-pointer">
                 <MagnifyingGlassIcon className="w-6 h-6  flex align-middle text-white font-extralight" />
               </button>
             </div>
+            {/* ----End Search Box header ---- */}
 
-            <div className="">
-              <div className="dr001_acc__help">3</div>
-              <div className="dr001_cart">4</div>
+            <div className="flex items-end ml-auto">
+              <div className="text-white p-2 hover:text-amber-100  transition-colors duration-300 cursor-pointer">
+                <p className="text-[12px]">Kingly, Sign in</p>
+                <p className="text-[14px] flex items-center font-bold">
+                  <span className="mr-1">Account & Help</span>
+                  <FontAwesomeIcon
+                    icon={faCaretDown}
+                    className="w-3 h-3 text-white"
+                  />
+                </p>
+              </div>
+
+              <div className="text-white p-2 hover:text-amber-100  transition-colors duration-300 cursor-pointer">
+                <p className="text-[11px]">
+                  <FontAwesomeIcon
+                    icon={faTruckFast}
+                    className="w-5 h-5 text-white  hover:text-amber-100  transition-colors duration-300 cursor-pointer "
+                  />
+                </p>
+                <p className="text-[14px] flex items-center font-bold">
+                  <span className="mr-1">Logistics</span>
+                </p>
+              </div>
+
+              <div className="text-white p-2 hover:text-amber-100  transition-colors duration-300 cursor-pointer">
+                <p className="text-[11px]">
+                  <FontAwesomeIcon
+                    icon={faShoppingCart}
+                    className="w-5 h-5 text-white  hover:text-amber-100  transition-colors duration-300 cursor-pointer "
+                  />
+                </p>
+                <p className="text-[14px] flex items-center font-bold">
+                  <span className="mr-1">Cart</span>
+                </p>
+              </div>
             </div>
           </div>
+          {/* ----end header ---- */}
         </div>
-
-        {/* <div className="flex items-center main__header pt-3 pl-5 pr-5 pb-3 gap-28 bg-slate-400">
-          <p className="text-white flex-shrink-0">
-            <FontAwesomeIcon icon={faBars} className="w-6 h-6" />
-          </p>
-        </div> */}
       </header>
-
-      <div className="mt-5">
+      {/* <div className="mt-5">
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0"
@@ -105,9 +138,9 @@ export default function showCard() {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <div className="carousel_wrapers">
+      {/* <div className="carousel_wrapers">
         <div className="embla">
           <div className="embla__viewport" ref={emblaRef}>
             <div className="embla__container">
@@ -131,7 +164,7 @@ export default function showCard() {
         >
           <ChevronLeftIcon className="h-8 w-8" />
         </button>
-      </div>
+      </div> */}
     </>
   );
 }
