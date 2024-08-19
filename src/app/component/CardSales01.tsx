@@ -22,7 +22,7 @@ function CardSales01({ item }: { item: any }) {
     // </div>
 
     <div>
-      <div className="rounded-lg  border border-gray-100 ">
+      <div className="rounded-lg  border border-gray-100 h-[580px] mb-5">
         <div className="overflow-hidden">
           <Image
             src="/images/imges.png"
