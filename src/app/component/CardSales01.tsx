@@ -5,6 +5,11 @@ import StarRating from "../home/component/StarRating";
 
 function CardSales01({ item }: { item: any }) {
   console.log();
+
+  const priceString = item.price.toString();
+  const priceParts = priceString.split(".");
+  console.log(priceString);
+
   return (
     //----note that this is the expose compose
     // import CardSales01 from "../component/CardSales01";
@@ -50,11 +55,11 @@ function CardSales01({ item }: { item: any }) {
           <p className="text-xs mb-1">500+ bought in past month</p>
           <div className="text-2xl flex align-middle mb-2">
             <p className="text-sm align-middle mt-1">$</p>
-            <p className="text-4xl tracking-[-2px] font-medium">59</p>
-            <p className="text-sm mt-1 mr-2 pl-1">99</p>
+            <p className="text-4xl tracking-[-2px] font-medium">{`${priceParts[0]}`}</p>
+            <p className="text-sm mt-1 mr-2 pl-1">{`${priceParts[1]}`}</p>
             <p className="text-sm mt-3">
               <span className="mr-1">List:</span>
-              <span className="line-through">$32.99</span>
+              <span className="line-through">{`$${item.price}`}</span>
             </p>
           </div>
 
