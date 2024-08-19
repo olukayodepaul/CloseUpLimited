@@ -9,6 +9,7 @@ import {
 import CardSales03 from "../component/CardSales03";
 import CardSales01 from "../component/CardSales01";
 import useEmblaCarousel from "embla-carousel-react";
+import useProducts from "../home/hooks/useProducts";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
@@ -16,14 +17,17 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faTruckFast } from "@fortawesome/free-solid-svg-icons";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
 
 export default function showCard() {
+  const { products, loading, error } = useProducts();
+
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: false, // Optional: Enable looping
   });
 
   const scrollToIndex = useCallback(
-    (index) => {
+    (index: any) => {
       if (emblaApi) {
         emblaApi.scrollTo(index);
       }
@@ -52,12 +56,11 @@ export default function showCard() {
     event.preventDefault();
     const nav = document.getElementById("Navname");
     const overlay = document.getElementById("overlay");
-    const scrollDisable = document.getElementById("overlay");
+    document.body.classList.add("overlay-active");
 
     if (overlay && nav) {
       nav.style.animation = "expand 0.2s forwards";
       overlay.style.display = "block";
-      document.body.classList.add("overlay-active");
       overlay.style.animation = "expand 0.2s forwards";
     }
   };
@@ -78,7 +81,7 @@ export default function showCard() {
   return (
     <>
       {/* text-amber-900 */}
-      <div id="overlay"></div>
+      <div id="overlay" onClick={closeNavBar}></div>
       <header className="top-0 left-0 w-full  shadow-sm relative">
         <div className="header__container pt-2 pb-2 pl-5 pr-5 bg-slate-800">
           <div className="adver___header"></div>
@@ -156,14 +159,37 @@ export default function showCard() {
       </header>
 
       <main>
-        <aside className="navBar" id="Navname">
-          <FontAwesomeIcon
-            icon={faXmark}
-            className="w-6 h-6 text-gray-700 hover:text-gray-900 transition-colors duration-300 cursor-pointer"
-            onClick={closeNavBar}
-          />
-          <p>Navigation content hare</p>
+        <aside className="navBar bg-white" id="Navname">
+          <div className="navBarContentHeader">
+            <div className="p-[14px] flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                <FontAwesomeIcon
+                  icon={faCircleUser}
+                  className="w-7 h-7 text-white hover:text-slate-400 transition-colors  duration-300 cursor-pointer rounded-full border-2 border-gray-300 overflow-hidden"
+                />
+
+                <div>
+                  <p className="text-base text-white">
+                    <span className="font-bold">Paul Olukayode</span>
+                  </p>
+                  <p className="text-white text-base">Sign in</p>
+                </div>
+              </div>
+              <FontAwesomeIcon
+                icon={faXmark}
+                className="w-6 h-6 text-white hover:text-slate-400 transition-colors duration-300 cursor-pointer"
+                onClick={closeNavBar}
+              />
+            </div>
+          </div>
+          <div className="navBarContentBody"></div>
         </aside>
+
+        {/* <div className="sideNavHeader">
+              <p>Hi, Paul</p>
+              
+            </div>
+            <div className="navBody"></div> */}
 
         <div className="mt-5">
           <meta
@@ -172,16 +198,16 @@ export default function showCard() {
           ></meta>
           <div className="flex items-center justify-center mx-auto adjust_screen">
             <div className="resizes__containers">
-              {[...Array(10)].map((_, index) => (
+              {products.map((items, index) => (
                 <div className="embla__slide" key={index}>
-                  <CardSales01 />
+                  <CardSales01 item={items} />
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        {/* <div className="carousel_wrapers">
+        <div className="carousel_wrapers">
           <div className="embla">
             <div className="embla__viewport" ref={emblaRef}>
               <div className="embla__container">
@@ -205,7 +231,7 @@ export default function showCard() {
           >
             <ChevronLeftIcon className="h-8 w-8" />
           </button>
-        </div> */}
+        </div>
       </main>
     </>
   );

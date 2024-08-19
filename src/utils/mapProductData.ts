@@ -1,4 +1,4 @@
-import { Product } from "../app/(home)/models/Products";
+import { Product } from "../app/home/models/Products";
 import {
   ApplicationProduct,
   ApplicationReview,

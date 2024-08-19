@@ -1,9 +1,10 @@
 import React from "react";
 import { InformationCircleIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
-import StarRating from "../(home)/component/StarRating";
+import StarRating from "../home/component/StarRating";
 
-function CardSales01() {
+function CardSales01({ item }: { item: any }) {
+  console.log();
   return (
     //----note that this is the expose compose
     // import CardSales01 from "../component/CardSales01";
@@ -41,8 +42,7 @@ function CardSales01() {
           </div>
 
           <p className="mb-1 hover:text-amber-600 transition-colors duration-300 cursor-pointer">
-            Digital Camera 4K, Ultra HD 48MP Photo 4K Video, Dual Lens Camera,
-            18x Digital Zoom, Autofocus Camera for Photography, with Wi...
+            {`${item.name} ${item.description}`}
           </p>
           <div className="mb-1">
             <StarRating rating={4} />

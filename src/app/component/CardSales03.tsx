@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import StarRating from "../(home)/component/StarRating";
+import StarRating from "../home/component/StarRating";
 
 export default function CardSales03() {
   return (
