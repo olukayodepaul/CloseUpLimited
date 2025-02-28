@@ -12,7 +12,7 @@ const useProducts = (): UseProductsReturn => {
     const getProducts = async () => {
       try {
         const data = await fetchProducts();
-        setProducts(data);
+        setProducts(data); // Ensure data matches `ApplicationProduct[]`
       } catch (error) {
         setError("Failed to fetch products");
       } finally {
